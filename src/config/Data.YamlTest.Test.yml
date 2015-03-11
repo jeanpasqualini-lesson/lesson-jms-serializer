@@ -1,0 +1,38 @@
+Data\YamlTest\Test:
+    access_type: public_method
+    access_order: custom
+    exclusion_policy: NONE
+    xml_root_name: test
+    custom_accessor_order: ["one", "two", "three"]
+    callback_methods:
+        pre_serialize: updateData
+    properties:
+        versionOne:
+            serialized_name: version
+            access_type: property
+            since_version: 1.0.0
+            until_version: 2.0.0
+
+        versionTwo:
+            serialized_name: version
+            access_type: property
+            since_version: 2.0.0
+            until_version: 1.0.0
+
+        groupOne:
+            serialized_name: group
+            access_type: property
+            groups: ["one"]
+
+        groupTwo:
+            serialized_name: group
+            access_type: property
+            groups: ["two"]
+
+        exclude:
+            exclude: true
+
+    virtual_properties:
+        getFoor:
+            serialized_name: foor
+            type: string

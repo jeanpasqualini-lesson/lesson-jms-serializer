@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class
+            name="Data\XmlTest\Test"
+            exclusion-policy="NONE"
+            xml-root-name="test" access-type="public_method"
+            accessor-order="custom" custom-accessor-order="one,two,three"
+    >
+            <property name="versionOne" access-type="property"
+                    serialized-name="version"
+                    since-version="1.0.0"
+                    until-version="2.0.0"
+                    >
+            </property>
+
+            <property name="versionTwo" access-type="property"
+                    serialized-name="verion"
+                    since-version="2.0.0"
+                    until-version="1.0.0"
+                    >
+            </property>
+
+            <property name="groupOne" access-type="property"
+                      serialized-name="group"
+                      groups="one"
+                    >
+            </property>
+
+            <property name="groupTwo" access-type="property"
+                      serialized-name="group"
+                      groups="two"
+                    >
+            </property>
+
+            <property name="exclude" exclude="true"></property>
+
+            <callback-method name="updateData" type="pre-serialize"></callback-method>
+
+            <virtual-property method="getFoor" serialized-name="foor"></virtual-property>
+    </class>
+</serializer>
